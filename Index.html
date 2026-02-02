@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para ti</title>
+  <style>
+    body {
+      margin: 0;
+      background: #0f0f0f;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .card {
+      max-width: 90%;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+    p {
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card" onclick="next()">
+  <p id="text"></p>
+  <img id="image" src="" />
+</div>
+
+<script>
+  const data = [
+    { text: "Contigo todo se siente más tranquilo.", img: "foto1.jpg" },
+    { text: "No necesito grandes cosas, solo a ti.", img: "foto2.jpg" },
+    { text: "Gracias por existir en mi vida.", img: "foto3.jpg" },
+    { text: "Esto lo hice pensando en ti.", img: "foto4.jpg" }
+  ];
+
+  let i = 0;
+
+  function next() {
+    document.getElementById("text").innerText = data[i].text;
+    document.getElementById("image").src = data[i].img;
+    i = (i + 1) % data.length;
+  }
+
+  next();
+</script>
+
+</body>
+</html>
